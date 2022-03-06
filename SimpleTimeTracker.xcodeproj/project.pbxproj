@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF91906A27D4C9B9002DED9C /* SimpleTimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91906927D4C9B9002DED9C /* SimpleTimeTrackerApp.swift */; };
+		AF91906C27D4C9B9002DED9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91906B27D4C9B9002DED9C /* ContentView.swift */; };
+		AF91906E27D4C9BA002DED9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91906D27D4C9BA002DED9C /* Assets.xcassets */; };
+		AF91907127D4C9BA002DED9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91907027D4C9BA002DED9C /* Preview Assets.xcassets */; };
+		AF91907527D4C9BA002DED9C /* SimpleTimeTracker WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AF91907427D4C9BA002DED9C /* SimpleTimeTracker WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AF91907A27D4C9BB002DED9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91907927D4C9BB002DED9C /* Assets.xcassets */; };
+		AF91908027D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF91907F27D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AF91908527D4C9BB002DED9C /* SimpleTimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91908427D4C9BB002DED9C /* SimpleTimeTrackerApp.swift */; };
+		AF91908727D4C9BB002DED9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91908627D4C9BB002DED9C /* ContentView.swift */; };
+		AF91908927D4C9BB002DED9C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91908827D4C9BB002DED9C /* NotificationController.swift */; };
+		AF91908B27D4C9BB002DED9C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91908A27D4C9BB002DED9C /* NotificationView.swift */; };
+		AF91908D27D4C9BB002DED9C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91908C27D4C9BB002DED9C /* ComplicationController.swift */; };
+		AF91908F27D4C9BB002DED9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91908E27D4C9BB002DED9C /* Assets.xcassets */; };
+		AF91909227D4C9BB002DED9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91909127D4C9BB002DED9C /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF91907627D4C9BA002DED9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF91905E27D4C9B9002DED9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF91907327D4C9BA002DED9C;
+			remoteInfo = "SimpleTimeTracker WatchKit App";
+		};
+		AF91908127D4C9BB002DED9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF91905E27D4C9B9002DED9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF91907E27D4C9BB002DED9C;
+			remoteInfo = "SimpleTimeTracker WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF91909A27D4C9BB002DED9C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF91908027D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF91909E27D4C9BB002DED9C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AF91907527D4C9BA002DED9C /* SimpleTimeTracker WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AF91906627D4C9B9002DED9C /* SimpleTimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF91906927D4C9B9002DED9C /* SimpleTimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimeTrackerApp.swift; sourceTree = "<group>"; };
+		AF91906B27D4C9B9002DED9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AF91906D27D4C9BA002DED9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF91907027D4C9BA002DED9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AF91907427D4C9BA002DED9C /* SimpleTimeTracker WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleTimeTracker WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF91907927D4C9BB002DED9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF91907F27D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SimpleTimeTracker WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF91908427D4C9BB002DED9C /* SimpleTimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimeTrackerApp.swift; sourceTree = "<group>"; };
+		AF91908627D4C9BB002DED9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AF91908827D4C9BB002DED9C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		AF91908A27D4C9BB002DED9C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		AF91908C27D4C9BB002DED9C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		AF91908E27D4C9BB002DED9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF91909127D4C9BB002DED9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AF91909327D4C9BB002DED9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF91909427D4C9BB002DED9C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF91906327D4C9B9002DED9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF91907C27D4C9BB002DED9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF91905D27D4C9B9002DED9C = {
+			isa = PBXGroup;
+			children = (
+				AF91906827D4C9B9002DED9C /* SimpleTimeTracker */,
+				AF91907827D4C9BA002DED9C /* SimpleTimeTracker WatchKit App */,
+				AF91908327D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension */,
+				AF91906727D4C9B9002DED9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF91906727D4C9B9002DED9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF91906627D4C9B9002DED9C /* SimpleTimeTracker.app */,
+				AF91907427D4C9BA002DED9C /* SimpleTimeTracker WatchKit App.app */,
+				AF91907F27D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF91906827D4C9B9002DED9C /* SimpleTimeTracker */ = {
+			isa = PBXGroup;
+			children = (
+				AF91906927D4C9B9002DED9C /* SimpleTimeTrackerApp.swift */,
+				AF91906B27D4C9B9002DED9C /* ContentView.swift */,
+				AF91906D27D4C9BA002DED9C /* Assets.xcassets */,
+				AF91906F27D4C9BA002DED9C /* Preview Content */,
+			);
+			path = SimpleTimeTracker;
+			sourceTree = "<group>";
+		};
+		AF91906F27D4C9BA002DED9C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AF91907027D4C9BA002DED9C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AF91907827D4C9BA002DED9C /* SimpleTimeTracker WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				AF91907927D4C9BB002DED9C /* Assets.xcassets */,
+			);
+			path = "SimpleTimeTracker WatchKit App";
+			sourceTree = "<group>";
+		};
+		AF91908327D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AF91908427D4C9BB002DED9C /* SimpleTimeTrackerApp.swift */,
+				AF91908627D4C9BB002DED9C /* ContentView.swift */,
+				AF91908827D4C9BB002DED9C /* NotificationController.swift */,
+				AF91908A27D4C9BB002DED9C /* NotificationView.swift */,
+				AF91908C27D4C9BB002DED9C /* ComplicationController.swift */,
+				AF91908E27D4C9BB002DED9C /* Assets.xcassets */,
+				AF91909327D4C9BB002DED9C /* Info.plist */,
+				AF91909427D4C9BB002DED9C /* PushNotificationPayload.apns */,
+				AF91909027D4C9BB002DED9C /* Preview Content */,
+			);
+			path = "SimpleTimeTracker WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		AF91909027D4C9BB002DED9C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AF91909127D4C9BB002DED9C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF91906527D4C9B9002DED9C /* SimpleTimeTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF91909F27D4C9BB002DED9C /* Build configuration list for PBXNativeTarget "SimpleTimeTracker" */;
+			buildPhases = (
+				AF91906227D4C9B9002DED9C /* Sources */,
+				AF91906327D4C9B9002DED9C /* Frameworks */,
+				AF91906427D4C9B9002DED9C /* Resources */,
+				AF91909E27D4C9BB002DED9C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF91907727D4C9BA002DED9C /* PBXTargetDependency */,
+			);
+			name = SimpleTimeTracker;
+			productName = SimpleTimeTracker;
+			productReference = AF91906627D4C9B9002DED9C /* SimpleTimeTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF91907327D4C9BA002DED9C /* SimpleTimeTracker WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF91909B27D4C9BB002DED9C /* Build configuration list for PBXNativeTarget "SimpleTimeTracker WatchKit App" */;
+			buildPhases = (
+				AF91907227D4C9BA002DED9C /* Resources */,
+				AF91909A27D4C9BB002DED9C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF91908227D4C9BB002DED9C /* PBXTargetDependency */,
+			);
+			name = "SimpleTimeTracker WatchKit App";
+			productName = "SimpleTimeTracker WatchKit App";
+			productReference = AF91907427D4C9BA002DED9C /* SimpleTimeTracker WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		AF91907E27D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF91909727D4C9BB002DED9C /* Build configuration list for PBXNativeTarget "SimpleTimeTracker WatchKit Extension" */;
+			buildPhases = (
+				AF91907B27D4C9BB002DED9C /* Sources */,
+				AF91907C27D4C9BB002DED9C /* Frameworks */,
+				AF91907D27D4C9BB002DED9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleTimeTracker WatchKit Extension";
+			productName = "SimpleTimeTracker WatchKit Extension";
+			productReference = AF91907F27D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF91905E27D4C9B9002DED9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					AF91906527D4C9B9002DED9C = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AF91907327D4C9BA002DED9C = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AF91907E27D4C9BB002DED9C = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = AF91906127D4C9B9002DED9C /* Build configuration list for PBXProject "SimpleTimeTracker" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF91905D27D4C9B9002DED9C;
+			productRefGroup = AF91906727D4C9B9002DED9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF91906527D4C9B9002DED9C /* SimpleTimeTracker */,
+				AF91907327D4C9BA002DED9C /* SimpleTimeTracker WatchKit App */,
+				AF91907E27D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF91906427D4C9B9002DED9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF91907127D4C9BA002DED9C /* Preview Assets.xcassets in Resources */,
+				AF91906E27D4C9BA002DED9C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF91907227D4C9BA002DED9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF91907A27D4C9BB002DED9C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF91907D27D4C9BB002DED9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF91909227D4C9BB002DED9C /* Preview Assets.xcassets in Resources */,
+				AF91908F27D4C9BB002DED9C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF91906227D4C9B9002DED9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF91906C27D4C9B9002DED9C /* ContentView.swift in Sources */,
+				AF91906A27D4C9B9002DED9C /* SimpleTimeTrackerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF91907B27D4C9BB002DED9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF91908927D4C9BB002DED9C /* NotificationController.swift in Sources */,
+				AF91908727D4C9BB002DED9C /* ContentView.swift in Sources */,
+				AF91908D27D4C9BB002DED9C /* ComplicationController.swift in Sources */,
+				AF91908527D4C9BB002DED9C /* SimpleTimeTrackerApp.swift in Sources */,
+				AF91908B27D4C9BB002DED9C /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF91907727D4C9BA002DED9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF91907327D4C9BA002DED9C /* SimpleTimeTracker WatchKit App */;
+			targetProxy = AF91907627D4C9BA002DED9C /* PBXContainerItemProxy */;
+		};
+		AF91908227D4C9BB002DED9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF91907E27D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension */;
+			targetProxy = AF91908127D4C9BB002DED9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AF91909527D4C9BB002DED9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF91909627D4C9BB002DED9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AF91909827D4C9BB002DED9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleTimeTracker WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TJ6769BL89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SimpleTimeTracker WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SimpleTimeTracker WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.schwenger.SimpleTimeTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		AF91909927D4C9BB002DED9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleTimeTracker WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TJ6769BL89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SimpleTimeTracker WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SimpleTimeTracker WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.schwenger.SimpleTimeTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		AF91909C27D4C9BB002DED9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TJ6769BL89;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = SimpleTimeTracker_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "SimpleTimeTracker WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = de.schwenger.SimpleTimeTracker;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.schwenger.SimpleTimeTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		AF91909D27D4C9BB002DED9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TJ6769BL89;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = SimpleTimeTracker_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "SimpleTimeTracker WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = de.schwenger.SimpleTimeTracker;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.schwenger.SimpleTimeTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		AF9190A027D4C9BB002DED9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleTimeTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = TJ6769BL89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.schwenger.SimpleTimeTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF9190A127D4C9BB002DED9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleTimeTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = TJ6769BL89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.schwenger.SimpleTimeTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF91906127D4C9B9002DED9C /* Build configuration list for PBXProject "SimpleTimeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF91909527D4C9BB002DED9C /* Debug */,
+				AF91909627D4C9BB002DED9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF91909727D4C9BB002DED9C /* Build configuration list for PBXNativeTarget "SimpleTimeTracker WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF91909827D4C9BB002DED9C /* Debug */,
+				AF91909927D4C9BB002DED9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF91909B27D4C9BB002DED9C /* Build configuration list for PBXNativeTarget "SimpleTimeTracker WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF91909C27D4C9BB002DED9C /* Debug */,
+				AF91909D27D4C9BB002DED9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF91909F27D4C9BB002DED9C /* Build configuration list for PBXNativeTarget "SimpleTimeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF9190A027D4C9BB002DED9C /* Debug */,
+				AF9190A127D4C9BB002DED9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF91905E27D4C9B9002DED9C /* Project object */;
+}
