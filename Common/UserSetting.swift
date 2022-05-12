@@ -8,11 +8,6 @@
 import Foundation
 
 class UserSettings: ObservableObject {
-  @Published var recentWorkRecords: [RecentWorkRecord] {
-    didSet {
-      UserDefaults.standard.set(recentWorkRecords.map { $0.asData }, forKey: Keys.recentWorkRecords.key)
-    }
-  }
   
   @Published private var workDays: [Quota] {
     didSet {
@@ -20,22 +15,30 @@ class UserSettings: ObservableObject {
     }
   }
   
-  @Published var recentWorkRecordStorageLimit: UInt {
-    didSet(old) {
-      if recentWorkRecordStorageLimit == 0 {
-        assert(false)
-        recentWorkRecordStorageLimit = old
-      }
-      UserDefaults.standard.set(recentWorkRecordStorageLimit, forKey: Keys.storageLimits.key)
+  @Published var mostRecentRecord: UUID {
+    didSet {
+      UserDefaults.standard.set(mostRecentRecord, forKey: Keys.mostRecentRecord.key)
+    }
+  }
+  
+  @Published var clockState: ClockState {
+    didSet {
+      UserDefaults.standard.set(clockState, forKey: Keys.clockState.key)
+    }
+  }
+  
+  @Published var lastClockTriggerTime: Date {
+    didSet {
+      UserDefaults.standard.set(lastClockTriggerTime, forKey: Keys.lastClockTriggerTime.key)
     }
   }
   
   init() {
     let timeIntervals = UserDefaults.standard.array(forKey: Keys.workdays.key) as? [TimeInterval]
     self.workDays = timeIntervals.map { $0.map { $0.asQuota } } ?? UserSettings.workdaysDefault
-    self.recentWorkRecordStorageLimit = UserDefaults.standard.object(forKey: Keys.recentWorkRecords.key) as? UInt ?? UserSettings.recentWorkRecordStorageLimitDefault
-    let workRecords = UserDefaults.standard.array(forKey: Keys.workdays.key) as? [Data]
-    self.recentWorkRecords = workRecords.map { $0.map(RecentWorkRecord.fromData) } ?? UserSettings.recentWorkRecordsDefault
+    self.mostRecentRecord = UserDefaults.standard.value(forKey: Keys.mostRecentRecord.key) as? UUID ?? UserSettings.mostRecentRecordDefault
+    self.lastClockTriggerTime = UserDefaults.standard.object(forKey: Keys.lastClockTriggerTime.key) as? Date ?? UserSettings.lastClockTriggerTimeDefault
+    self.clockState = UserDefaults.standard.object(forKey: Keys.clockState.key) as? ClockState ?? UserSettings.clockStateDefault
   }
   
 }
@@ -53,8 +56,6 @@ extension UserSettings {
   
   func reset() {
     self.workDays = Self.workdaysDefault
-    self.recentWorkRecordStorageLimit = Self.recentWorkRecordStorageLimitDefault
-    self.recentWorkRecords = Self.recentWorkRecordsDefault
   }
   
   func setQuota(for day: Weekday, _ quota: Quota) {
@@ -62,9 +63,10 @@ extension UserSettings {
   }
   
   enum Keys: String {
-    case recentWorkRecords
     case workdays
-    case storageLimits
+    case mostRecentRecord
+    case clockState
+    case lastClockTriggerTime
     
     var key: String { self.rawValue }
   }
@@ -81,14 +83,13 @@ extension UserSettings {
     Quota.zero,  // Saturday
   ]
   static let defaultWorkdayQuota: Quota = .eight
-  static let recentWorkRecordStorageLimitDefault: UInt = 30
-  static let recentWorkRecordsDefault: [RecentWorkRecord] = []
+  static let mostRecentRecordDefault: UUID = UUID()
+  static let clockStateDefault: ClockState = .Fresh
+  static let lastClockTriggerTimeDefault: Date = Date.now
 }
 
 extension UserSettings {
   static var preview: UserSettings {
-    let us = UserSettings();
-    us.recentWorkRecords = RecentWorkRecord.arbitraryConsecutive(n: 1)
-    return us
+    UserSettings()
   }
 }

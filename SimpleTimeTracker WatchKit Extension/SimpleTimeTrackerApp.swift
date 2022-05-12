@@ -15,11 +15,16 @@ struct SimpleTimeTrackerApp: App {
   
   @SceneBuilder var body: some Scene {
     let us = UserSettings()
+    let past = Past(
+      from: us,
+      workRecords: WorkRecord.arbitraryConsecutive(n: 100, dc.container.viewContext),
+      moc: dc.container.viewContext
+    )
     WindowGroup {
       NavigationView {
         ContentView()
           .environment(\.managedObjectContext, dc.container.viewContext)
-          .environmentObject(Past(from: us, oldWorkRecords: Array(workRecords), moc: dc.container.viewContext))
+          .environmentObject(past)
           .environmentObject(us)
       }
     }

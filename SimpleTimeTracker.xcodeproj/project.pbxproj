@@ -12,7 +12,6 @@
 		AF0303A827F6228A00D412F2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A727F6228A00D412F2 /* DataController.swift */; };
 		AF0303AA27F62EE400D412F2 /* OldWorkRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A927F62EE400D412F2 /* OldWorkRecordView.swift */; };
 		AF53B90C2805CD9C007185AA /* WorkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B90B2805CD9C007185AA /* WorkRecord.swift */; };
-		AF53B90D2805CD9C007185AA /* WorkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B90B2805CD9C007185AA /* WorkRecord.swift */; };
 		AF53B91428075546007185AA /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B91328075546007185AA /* DateHelper.swift */; };
 		AF53B91528075546007185AA /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B91328075546007185AA /* DateHelper.swift */; };
 		AF53B916280760CD007185AA /* Past.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A227F4E87600D412F2 /* Past.swift */; };
@@ -28,6 +27,11 @@
 		AF785957282C3E7700835332 /* PastRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785955282C3E7700835332 /* PastRecordDetailView.swift */; };
 		AF785959282C407900835332 /* SplitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785958282C407900835332 /* SplitLine.swift */; };
 		AF78595A282C407900835332 /* SplitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785958282C407900835332 /* SplitLine.swift */; };
+		AF78595C282D6B9800835332 /* WorkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B90B2805CD9C007185AA /* WorkRecord.swift */; };
+		AF78595E282D84BB00835332 /* ClockLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78595D282D84BB00835332 /* ClockLogic.swift */; };
+		AF78595F282D84BB00835332 /* ClockLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78595D282D84BB00835332 /* ClockLogic.swift */; };
+		AF785961282D9C3000835332 /* CurrentWorkDayViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785960282D9C3000835332 /* CurrentWorkDayViews.swift */; };
+		AF785962282D9C3000835332 /* CurrentWorkDayViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785960282D9C3000835332 /* CurrentWorkDayViews.swift */; };
 		AF8DE1B427E4FDE000F5EBC7 /* PastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1B327E4FDE000F5EBC7 /* PastView.swift */; };
 		AF8DE1B727E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1B527E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld */; };
 		AF8DE1B927E4FF7900F5EBC7 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1B827E4FF7900F5EBC7 /* UserSetting.swift */; };
@@ -114,6 +118,8 @@
 		AF785952282C243C00835332 /* CapsuleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleProgressBar.swift; sourceTree = "<group>"; };
 		AF785955282C3E7700835332 /* PastRecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastRecordDetailView.swift; sourceTree = "<group>"; };
 		AF785958282C407900835332 /* SplitLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitLine.swift; sourceTree = "<group>"; };
+		AF78595D282D84BB00835332 /* ClockLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockLogic.swift; sourceTree = "<group>"; };
+		AF785960282D9C3000835332 /* CurrentWorkDayViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWorkDayViews.swift; sourceTree = "<group>"; };
 		AF8DE1B327E4FDE000F5EBC7 /* PastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastView.swift; sourceTree = "<group>"; };
 		AF8DE1B627E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTimeTracker.xcdatamodel; sourceTree = "<group>"; };
 		AF8DE1B827E4FF7900F5EBC7 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 				AF8DE1BD27E62FE100F5EBC7 /* StackedHighlight.swift */,
 				AF785952282C243C00835332 /* CapsuleProgressBar.swift */,
 				AF785958282C407900835332 /* SplitLine.swift */,
+				AF785960282D9C3000835332 /* CurrentWorkDayViews.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				AF8DE1C127E7CAAB00F5EBC7 /* PhoneComm.swift */,
+				AF78595D282D84BB00835332 /* ClockLogic.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -200,6 +208,7 @@
 		AF53B91228074B95007185AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF53B90B2805CD9C007185AA /* WorkRecord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,7 +222,6 @@
 				AF9190A627D7D3CA002DED9C /* CurrentWorkDay.swift */,
 				AF8DE1B827E4FF7900F5EBC7 /* UserSetting.swift */,
 				AF8DE1C327E7CBA000F5EBC7 /* Comm.swift */,
-				AF53B90B2805CD9C007185AA /* WorkRecord.swift */,
 				AF53B91328075546007185AA /* DateHelper.swift */,
 				AF78594C2813311200835332 /* DateExtension.swift */,
 			);
@@ -438,6 +446,7 @@
 				AF53B90C2805CD9C007185AA /* WorkRecord.swift in Sources */,
 				AF8DE1B727E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld in Sources */,
 				AF9190A727D7D3CA002DED9C /* CurrentWorkDay.swift in Sources */,
+				AF785961282D9C3000835332 /* CurrentWorkDayViews.swift in Sources */,
 				AF8DE1B927E4FF7900F5EBC7 /* UserSetting.swift in Sources */,
 				AF8DE1BE27E62FE100F5EBC7 /* StackedHighlight.swift in Sources */,
 				AF53B91428075546007185AA /* DateHelper.swift in Sources */,
@@ -448,6 +457,7 @@
 				AF0303AA27F62EE400D412F2 /* OldWorkRecordView.swift in Sources */,
 				AF0303A827F6228A00D412F2 /* DataController.swift in Sources */,
 				AF785953282C243C00835332 /* CapsuleProgressBar.swift in Sources */,
+				AF78595E282D84BB00835332 /* ClockLogic.swift in Sources */,
 				AF785950282C242200835332 /* WorkRecordView.swift in Sources */,
 				AF8DE1C427E7CBA000F5EBC7 /* Comm.swift in Sources */,
 				AF785959282C407900835332 /* SplitLine.swift in Sources */,
@@ -463,7 +473,6 @@
 				AF8DE1BA27E4FF7900F5EBC7 /* UserSetting.swift in Sources */,
 				AF785957282C3E7700835332 /* PastRecordDetailView.swift in Sources */,
 				AF8DE1C027E7C9BA00F5EBC7 /* WatchComm.swift in Sources */,
-				AF53B90D2805CD9C007185AA /* WorkRecord.swift in Sources */,
 				AF785951282C242200835332 /* WorkRecordView.swift in Sources */,
 				AF78595A282C407900835332 /* SplitLine.swift in Sources */,
 				AF9190B027D7F5B6002DED9C /* Common.swift in Sources */,
@@ -474,9 +483,12 @@
 				AF91908D27D4C9BB002DED9C /* ComplicationController.swift in Sources */,
 				AF78594E2813311200835332 /* DateExtension.swift in Sources */,
 				AF9190AC27D7E68E002DED9C /* CurrentWorkDay.swift in Sources */,
+				AF785962282D9C3000835332 /* CurrentWorkDayViews.swift in Sources */,
 				AF53B91828076599007185AA /* DataController.swift in Sources */,
 				AF53B91528075546007185AA /* DateHelper.swift in Sources */,
 				AF91908527D4C9BB002DED9C /* SimpleTimeTrackerApp.swift in Sources */,
+				AF78595F282D84BB00835332 /* ClockLogic.swift in Sources */,
+				AF78595C282D6B9800835332 /* WorkRecord.swift in Sources */,
 				AF8DE1C527E7CBA000F5EBC7 /* Comm.swift in Sources */,
 				AF91908B27D4C9BB002DED9C /* NotificationView.swift in Sources */,
 			);

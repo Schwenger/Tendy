@@ -10,11 +10,11 @@ import WatchConnectivity
 
 class Comm: NSObject, WCSessionDelegate {
   var session: WCSession
-  let timeHandler: CurrentWorkDay
+  var past: Past
   
-  init(session: WCSession = .default, timeHandler: CurrentWorkDay){
+  init(session: WCSession = .default, _ past: Past){
     self.session = session
-    self.timeHandler = timeHandler
+    self.past = past
     super.init()
     self.session.delegate = self
     session.activate()
@@ -79,21 +79,21 @@ extension Comm {
     let message = Comm.receive(data)
     switch (message.what, message.inOut) {
     case (.Clock, .In):
-      assert(!timeHandler.clockedIn)
-      assert(timeHandler.canTriggerWork)
-      timeHandler.triggerWork(atTime: message.when)
+      assert(!past.clockedIn)
+      assert(past.canTriggerWork)
+      past.triggerWork(atTime: message.when)
     case (.Clock, .Out):
-      assert(timeHandler.clockedIn)
-      assert(timeHandler.canTriggerWork)
-      timeHandler.triggerWork(atTime: message.when)
+      assert(past.clockedIn)
+      assert(past.canTriggerWork)
+      past.triggerWork(atTime: message.when)
     case (.Break, .In):
-      assert(!timeHandler.inBreak)
-      assert(timeHandler.canTriggerBreak)
-      timeHandler.triggerBreak(atTime: message.when)
+      assert(!past.inBreak)
+      assert(past.canTriggerBreak)
+      past.triggerBreak(atTime: message.when)
     case (.Break, .Out):
-      assert(timeHandler.inBreak)
-      assert(timeHandler.canTriggerBreak)
-      timeHandler.triggerBreak(atTime: message.when)
+      assert(past.inBreak)
+      assert(past.canTriggerBreak)
+      past.triggerBreak(atTime: message.when)
     }
   }
 }

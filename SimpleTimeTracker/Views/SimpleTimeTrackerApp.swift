@@ -24,13 +24,11 @@ struct SimpleTimeTrackerApp: App {
 struct IntermediateView: View {
   @FetchRequest(sortDescriptors: []) var workRecords: FetchedResults<WorkRecord>
   @EnvironmentObject var settings: UserSettings
-  @StateObject var past: Past = Past.preview // todo
-  @StateObject var cwd: CurrentWorkDay = CurrentWorkDay.preview // todo
+  @StateObject var past: Past = Past.preview // TODO:
   @Environment(\.managedObjectContext) var moc
   
   var body: some View {
     ContentView()
       .environmentObject(past)
-      .environmentObject(cwd)
   }
 }

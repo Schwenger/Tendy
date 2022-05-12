@@ -10,74 +10,60 @@ import CoreData
 import SwiftUI
 
 class Past: ObservableObject {
-  @Published private var recentPast: [RecentWorkRecord]
-//  @Published var cwd: CurrentWorkDay
-  @Published private var workRecords: [WorkRecordProtocol]
-  @Published private var recordMap: [YMD: WorkRecordProtocol]
+  @Published private var workRecords: [WorkRecord]
+  @Published private var recordMap: [YMD: WorkRecord]
   var moc: NSManagedObjectContext
   var settings: UserSettings
   
-  init(from us: UserSettings, oldWorkRecords: [WorkRecord], moc: NSManagedObjectContext) {
-    self.recentPast = us.recentWorkRecords
-    self.workRecords = oldWorkRecords as! [WorkRecordProtocol]
+  private func createCwd() -> WorkRecord {
+    assert(cwd == nil)
+    let record = WorkRecord.empty(moc)
+    settings.mostRecentRecord = record.uuid
+    self.recordMap[record.at.ymd] = record
+    return record
+  }
+  
+  func getOrCreateCwd() -> WorkRecord {
+    self.cwd ?? createCwd()
+  }
+  
+  var cwd: WorkRecord? {
+    return workRecords.first(where: { $0.uuid == settings.mostRecentRecord })
+  }
+  
+  init(from us: UserSettings, workRecords: [WorkRecord], moc: NSManagedObjectContext) {
     self.moc = moc
-    self.recordMap = Self.reduceToMap(us.recentWorkRecords, oldWorkRecords)
+    self.workRecords = workRecords
+    self.recordMap = Self.reduceToMap(workRecords)
     self.settings = us
   }
   
-  private init(recentPast: [RecentWorkRecord], cwd: CurrentWorkDay, oldWorkRecords: [WorkRecord], moc: NSManagedObjectContext, settings: UserSettings) {
-    self.recentPast = recentPast
-    self.workRecords = oldWorkRecords as! [WorkRecordProtocol]
-    self.moc = moc
-    self.recordMap = Self.reduceToMap(recentPast, oldWorkRecords)
-    self.settings = settings
+  static private func reduceToMap(_ records: [WorkRecord]) -> [YMD: WorkRecord] {
+    records.reduce(into: [:]) { $0[$1.at.ymd] = $1 }
   }
   
-  static private func reduceToMap(_ recent: [RecentWorkRecord], _ old: [WorkRecord]) -> [YMD: WorkRecordProtocol] {
-    let r: [WorkRecordProtocol] = recent
-    let o: [WorkRecordProtocol] = old as! [WorkRecordProtocol]
-    return (r + o).reduce(into: [:]) { $0[$1.date.ymd] = $1 }
+  func workRecordFor(date: Date) -> WorkRecord? {
+    self.recordMap[date.ymd]
   }
   
-  func workRecordFor(date: Date, with cwd: CurrentWorkDay) -> WorkRecordProtocol? {
-    if date.isSameDay(as: Date.now) {
-      return cwd.asWorkRecord
-    }
-    return self.recordMap[date.ymd]
+  func overtime() -> TimeInterval {
+    workRecords.map { $0.timeWorked }.reduce(0.0, +)
   }
-  
-  func overtime(_ cwd: CurrentWorkDay) -> TimeInterval {
-    unifiedRecords(cwd).map { $0.timeWorked }.reduce(0.0, +)
-  }
-  
-  func accept(_ rec: RecentWorkRecord?) {
-    @EnvironmentObject var settings: UserSettings
-    @Environment(\.managedObjectContext) var context
-    let a = true
-    assert(!a)
-    // rework
-  }
-  
-//  func workRecordsFor(m month: Int, y year: Int) -> MonthlyRecord {
-//    let recs: [WorkRecordProtocol] = unifiedRecords
-//      .filter { $0.date.month == month && $0.date.year == year}
-//    return MonthlyRecord(m: month, y: year, records: recs)
-//  }
 
   var _retrievedFromCoreData: Int {
     return workRecords.count
   }
   
-  func unifiedRecords(_ cwd: CurrentWorkDay) -> [WorkRecordProtocol] {
-    guard let today = cwd.asWorkRecord else {
-      return workRecords + recentPast
-    }
-    return workRecords + recentPast + [today]
-  }
+//  func unifiedRecords(_ cwd: CurrentWorkDay) -> [WorkRecord] {
+//    guard let today = cwd.asWorkRecord else {
+//      return workRecords
+//    }
+//    return workRecords + [today]
+//  }
   
-  func displayMatrix(forY y: Int, andM m: Int, with cwd: CurrentWorkDay, numRows rows: Int = 6) -> [[RecordContainer]] {
+  func displayMatrix(forY y: Int, andM m: Int, numRows rows: Int = 6) -> [[RecordContainer]] {
     let allDays = DateHelper.allDaysInMonth(m: m, y: y)
-    let containers = allDays.map { ($0, self.workRecordFor(date: $0, with: cwd)) }
+    let containers = allDays.map { ($0, self.workRecordFor(date: $0)) }
       .map { wrapInContainer($0.0, $0.1) }
     var padded = nonePrefix(first: allDays.first!) + containers + noneSuffix(last: allDays.last!)
     let missingRows = rows - (padded.count / 7)
@@ -86,7 +72,7 @@ class Past: ObservableObject {
     return res
   }
   
-  private func wrapInContainer(_ date: Date, _ recOpt: WorkRecordProtocol?) -> RecordContainer {
+  private func wrapInContainer(_ date: Date, _ recOpt: WorkRecord?) -> RecordContainer {
     if let rec = recOpt {
       assert(date <= Date.now)
       if date.isSameDay(as: Date.now) {
@@ -117,39 +103,17 @@ class Past: ObservableObject {
     return [RecordContainer](repeating: .None, count: suffixLen)
   }
   
-}
-
-extension Past {
-  
   static var preview: Past {
-    let recs: [RecentWorkRecord] = (0...5).map { i in
-      let start = Date.now - TimeInterval.fromHAndMin(h: UInt(24 * (i + 1)), min: UInt(3 * i))
-      let end = start + TimeInterval.fromHAndMin(h: UInt(5 + i), min: UInt(8 * i))
-      let breaks: [Break]
-      if i > 0 {
-        let numBreaks = i % 2 + 1
-        breaks = (1...numBreaks).map { j in
-          Break(start: start + TimeInterval.fromH(h: UInt(j)), end: start + TimeInterval.fromHAndMin(h: UInt(j), min: 15))
-        }
-      } else {
-        breaks = []
-      }
-      return RecentWorkRecord(start: start, breakTimes: breaks, end: end)
-    }
-    return Past(
-      recentPast: recs,
-      cwd: CurrentWorkDay.preview,
-      oldWorkRecords: [],
-      moc: DataController().container.viewContext,
-      settings: UserSettings.preview
-    )
+    let us = UserSettings()
+    let moc = DataController().container.viewContext
+    let records = WorkRecord.arbitraryConsecutive(n: 100, moc)
+    return Past(from: us, workRecords: records, moc: moc)
   }
 }
 
-
 enum RecordContainer {
-  case Past(WorkRecordProtocol)
-  case Today(WorkRecordProtocol)
+  case Past(WorkRecord)
+  case Today(WorkRecord)
   case FreeDay
   case Future
   case Empty
@@ -166,7 +130,7 @@ enum RecordContainer {
     }
   }
   
-  var workRecord: WorkRecordProtocol? {
+  var workRecord: WorkRecord? {
     switch self {
     case .Past(let rec), .Today(let rec): return rec
     case .Future, .Empty, .None, .FreeDay: return nil
@@ -177,24 +141,24 @@ enum RecordContainer {
 struct MonthlyRecord {
   let month: Int
   let year: Int
-  private let records: [WorkRecordProtocol]
+  private let records: [WorkRecord]
 
-  init(m month: Int, y year: Int, records: [WorkRecordProtocol]) {
+  init(m month: Int, y year: Int, records: [WorkRecord]) {
     self.month = month
     self.year = year
     self.records = records
   }
   
-  var fullMonthlyRecord: [Date: WorkRecordProtocol?] {
+  var fullMonthlyRecord: [Date: WorkRecord?] {
     let recByDate = records.reduce(into: [:]) { $0[$1.date] = $1 }
     return DateHelper.allDaysInMonth(m: month, y: year).reduce(into: [:]) { $0[$1] = recByDate[$1] }
   }
   
-  func wrapInContainer(fullRecord: [Date: WorkRecordProtocol?], settings: UserSettings) -> [(Date, RecordContainer)] {
+  func wrapInContainer(fullRecord: [Date: WorkRecord?], settings: UserSettings) -> [(Date, RecordContainer)] {
     return fullRecord.map { (date, optRec) in
       let container: RecordContainer
       if let rec = optRec {
-        assert(Date.sameDay(rec.date, date))
+        assert(Date.sameDay(rec.at, date))
         if Date.sameDay(date, Date.now) {
           container = RecordContainer.Today(rec)
         } else {

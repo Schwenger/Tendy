@@ -11,7 +11,6 @@ struct ClockInOutView: View {
   
   @EnvironmentObject var settings: UserSettings
   @EnvironmentObject var past: Past
-  @EnvironmentObject var cwd: CurrentWorkDay
   
   var body: some View {
     NavigationView {
@@ -21,63 +20,63 @@ struct ClockInOutView: View {
           Spacer()
           StackedHighlight(caption: "Overtime", highlight: "16h 12m", additionalHighlight: ViewForegroundColor(.green))
           Spacer()
-          StackedHighlight(caption: "Worked Today", highlight: (cwd.timeWorked ?? TimeInterval(0)).defaultFormatted)
+          StackedHighlight(caption: "Worked Today", highlight: (past.cwd?.timeWorked ?? TimeInterval(0)).defaultFormatted)
           Spacer()
         }
         
         Spacer()
         
-        StackedHighlight(caption: "Estimated quitting time", highlight: "\(cwd.expectedQuittingTime.defaultFormatted)")
+        StackedHighlight(caption: "Estimated quitting time", highlight: "\(past.expectedQuittingTime.defaultFormatted)")
         .padding(.horizontal)
 
         Spacer()
         
-        Button(action: { cwd.triggerWork() }) {
+        Button(action: { past.triggerWork() }) {
           HStack {
-            cwd.clockInOutButtonLabel
+            past.clockInOutButtonLabel
               .labelStyle(.iconOnly)
               .font(.largeTitle)
             VStack {
-              cwd.clockInOutButtonLabel
+              past.clockInOutButtonLabel
                 .labelStyle(.titleOnly)
                 .font(.largeTitle)
-              if let startTime = cwd.startTime, cwd.clockedIn {
+              if let startTime = past.cwd?.date, past.clockedIn {
                 Text(startTime.defaultFormatted)
                   .font(.title2)
               }
             }
           }
         }
-        .disabled(!cwd.canTriggerWork)
+        .disabled(!past.canTriggerWork)
         .frame(maxWidth: .infinity, maxHeight: 75)
         .padding()
         .padding()
-        .background(cwd.canTriggerWork ? Color.blue : Color.gray)
+        .background(past.canTriggerWork ? Color.blue : Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .foregroundColor(.white)
         .padding(.horizontal)
         
-        Button(action: { cwd.triggerBreak() }) {
+        Button(action: { past.triggerBreak() }) {
           HStack {
-            cwd.breakInOutButtonLabel
+            past.breakInOutButtonLabel
               .labelStyle(.iconOnly)
               .font(.largeTitle)
             VStack {
-              cwd.breakInOutButtonLabel
+              past.breakInOutButtonLabel
                 .labelStyle(.titleOnly)
                 .font(.largeTitle)
-              if let startTime = cwd.breakStartTime, cwd.inBreak {
+              if let startTime = past.cwd?.breaks, past.inBreak {
                 Text(startTime.defaultFormatted)
                   .font(.title2)
               }
             }
           }
         }
-        .disabled(!cwd.canTriggerBreak)
+        .disabled(!past.canTriggerBreak)
         .frame(maxWidth: .infinity, maxHeight: 75)
         .padding()
         .padding()
-        .background(cwd.canTriggerBreak ? Color.green : Color.gray)
+        .background(past.canTriggerBreak ? Color.green : Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .foregroundColor(.white)
         .padding()
@@ -85,11 +84,6 @@ struct ClockInOutView: View {
         Spacer()
       }
       .navigationTitle(self.greeting)
-      .onAppear(perform: {
-        if cwd.shouldBeReplaced {
-          past.accept(cwd.replace())
-        }
-      })
     }
   }
   
@@ -117,7 +111,9 @@ struct ClockInOutView: View {
   }
   
   var timeLeft: String {
-    (settings.quota(Date.now).asTimeInterval - (cwd.timeWorked ?? TimeInterval(0))).defaultFormatted
+    let quota = settings.quota(Date.now).asTimeInterval
+    let worked = (past.cwd?.timeWorked ?? TimeInterval(0))
+    return (quota - worked).defaultFormatted
   }
   
 }
@@ -128,6 +124,5 @@ struct ClockInOutView_Previews: PreviewProvider {
         .environment(\.managedObjectContext, DataController().container.viewContext)
         .environmentObject(UserSettings.preview)
         .environmentObject(Past.preview)
-        .environmentObject(CurrentWorkDay.preview)
     }
 }

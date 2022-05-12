@@ -12,11 +12,11 @@ struct PastView: View {
   
   @EnvironmentObject var past: Past
   @EnvironmentObject var settings: UserSettings
-  @EnvironmentObject var cwd: CurrentWorkDay
+  
   @State var month: Int = Date.now.month
   @State var year: Int = Date.now.year
   
-  @State var showDetailsOf: WorkRecordProtocol? = nil
+  @State var showDetailsOf: WorkRecord? = nil
   @State var showDetails: Bool = false
   
   let entryWidth: CGFloat = 33
@@ -25,7 +25,7 @@ struct PastView: View {
   let entryPadding: CGFloat = 5
   
   var displayMatrix: [[RecordContainer]] {
-    past.displayMatrix(forY: year, andM: month, with: cwd)
+    past.displayMatrix(forY: year, andM: month)
   }
   
   var body: some View {
@@ -127,22 +127,20 @@ extension RecordContainer: View {
   var body: some View {
     switch self {
     case .Past(let rec): WorkRecordView(record: rec)
-    case .None: WorkRecordView.empty.opacity(0.0)
-    case .Future: WorkRecordView.empty.opacity(0.4)
+    case .None: EmptyWorkRecordView().opacity(0.0)
+    case .Future: EmptyWorkRecordView().opacity(0.4)
     case .Today(let rec): WorkRecordView(record: rec)
-    case .Empty: WorkRecordView.empty.opacity(0.1)
-    case .FreeDay: WorkRecordView.empty.opacity(0.1)
+    case .Empty: EmptyWorkRecordView().opacity(0.1)
+    case .FreeDay: EmptyWorkRecordView().opacity(0.1)
     }
   }
-}
 
-extension RecordContainer: WorkRecordProtocol {
   var date: Date {
-    self.workRecord!.date
+    self.workRecord!.at
   }
   
   var totalBreakTime: TimeInterval {
-    self.workRecord?.totalBreakTime ?? 0.0
+    self.workRecord?.breaks ?? 0.0
   }
   
   var timeWorked: TimeInterval {
@@ -154,7 +152,6 @@ struct PastView_Previews: PreviewProvider {
     static var previews: some View {
       PastView(month: Date.now.month)
         .environmentObject(Past.preview)
-        .environmentObject(CurrentWorkDay.preview)
         .environmentObject(UserSettings.preview)
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PastRecordDetailView: View {
-  @Binding var record: WorkRecordProtocol?
+  @Binding var record: WorkRecord?
   var body: some View {
     GeometryReader { geo in
       if let rec = record {
@@ -17,9 +17,9 @@ struct PastRecordDetailView: View {
           HStack {
             Spacer()
             VStack {
-              SplitLine("Date:", rec.date.defaultFormatted)
-              SplitLine("Time Worked:", rec.timeWorked.defaultFormatted)
-              SplitLine("Total Break Time:", rec.totalBreakTime.defaultFormatted)
+              SplitLine("Date:", rec.at.defaultFormatted)
+              SplitLine("Time Worked:", rec.workTime.defaultFormatted)
+              SplitLine("Total Break Time:", rec.breaks.defaultFormatted)
             }
             .frame(width: geo.size.width * 0.7)
             Spacer()
@@ -33,6 +33,6 @@ struct PastRecordDetailView: View {
 
 struct PastRecordDetailView_Previews: PreviewProvider {
     static var previews: some View {
-      PastRecordDetailView(record: .constant(RecentWorkRecord.preview))
+      PastRecordDetailView(record: .constant(WorkRecord.preview(DataController().container.viewContext)))
     }
 }

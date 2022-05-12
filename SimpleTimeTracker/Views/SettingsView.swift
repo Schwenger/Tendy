@@ -66,9 +66,6 @@ struct SettingsView: View {
             Stepper("Daily Quota: \(model.dailyQuota.defaultFormatted)", value: $model.dailyQuota, step: 15)
           }
         }
-        Section("Data Storage") {
-          Stepper("Detailed records: \(settings.recentWorkRecordStorageLimit)", value: $settings.recentWorkRecordStorageLimit)
-        }
         Section("Reset Data") {
           Button(role: .destructive, action: {
             self.prepConfDialog(

@@ -10,29 +10,29 @@ import SwiftUI
 struct AltWorkRecordView: View {
   
   @EnvironmentObject var settings: UserSettings
-  var record: WorkRecordProtocol
+  var record: WorkRecord
   private var positive: Color = .green
   private var negative: Color = .orange
   private var neutral: Color = .accentColor
   
-  init(record: WorkRecordProtocol) {
+  init(record: WorkRecord) {
     self.record = record
   }
   
-  private init(positive: Color? = nil, negative: Color? = nil, neutral: Color? = nil) {
-    self.record = RecentWorkRecord(start: Date.now, breakTimes: [], end: Date.now)
-    if let pos = positive { self.positive = pos }
-    if let neg = negative { self.negative = neg }
-    if let neu = neutral { self.neutral = neu }
-  }
-  
-  static var empty: Self {
-    // todo: Maybe move to init
-    Self(negative: .gray)
-  }
+//  private init(positive: Color? = nil, negative: Color? = nil, neutral: Color? = nil) {
+//    self.record = RecentWorkRecord(start: Date.now, breakTimes: [], end: Date.now)
+//    if let pos = positive { self.positive = pos }
+//    if let neg = negative { self.negative = neg }
+//    if let neu = neutral { self.neutral = neu }
+//  }
+//
+//  static var empty: Self {
+//    // todo: Maybe move to init
+//    Self(negative: .gray)
+//  }
   
   var quota: Double {
-    settings.quota(record.date).asTimeInterval
+    settings.quota(record.at).asTimeInterval
   }
   
   var relativeToQuota: Double {
@@ -69,11 +69,7 @@ struct AltWorkRecordView: View {
 
 struct AltWorkRecordView_Previews: PreviewProvider {
     static var previews: some View {
-      let record = RecentWorkRecord(
-        start: Date.now - TimeInterval.fromH(h: 12),
-        breakTimes: [],
-        end: Date.now - TimeInterval.fromH(h: 7)
-      )
+      let record = WorkRecord.preview(DataController().container.viewContext)
       AltWorkRecordView(record: record)
         .frame(width: 30)
         .environmentObject(UserSettings.preview)

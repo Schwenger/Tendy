@@ -10,17 +10,24 @@ import SwiftUI
 struct WorkRecordView: View {
   
   @EnvironmentObject var settings: UserSettings
-  var record: WorkRecordProtocol
+  
+  static var lineWidth: Double { 1 }
+  
+  var record: WorkRecord
   var positive: Color = .green
   var negative: Color = .orange
   var neutral: Color = .accentColor
   
+  init(record: WorkRecord) {
+    self.record = record
+  }
+  
   var quota: Quota {
-    settings.quota(record.date)
+    settings.quota(record.date!)
   }
   
   var isFreeDay: Bool {
-    DateHelper.isFreeDay(record.date, settings)
+    DateHelper.isFreeDay(record.date!, settings)
   }
   
   var progress: Double {
@@ -34,30 +41,13 @@ struct WorkRecordView: View {
     return was / expected
   }
   
-  var lineWidth: Double { 1 }
-  
-  init(record: WorkRecordProtocol) {
-    self.record = record
-  }
-  
-  private init(positive: Color? = nil, negative: Color? = nil, neutral: Color? = nil) {
-    self.record = RecentWorkRecord(start: Date.now, breakTimes: [], end: Date.now)
-    if let pos = positive { self.positive = pos }
-    if let neg = negative { self.negative = neg }
-    if let neu = neutral { self.neutral = neu }
-  }
-  
-  static var empty: Self {
-    Self(neutral: .gray)
-  }
-  
   var body: some View {
     GeometryReader { geo in
       ZStack {
         ForEach(self.progressEntities, id: \.self) { entity in
           CapsuleProgressBar(
             progress: .constant(entity.frac),
-            lineWidth: self.lineWidth,
+            lineWidth: Self.lineWidth,
             color: entity.color,
             cornerRadius: geo.size.height * 0.05,
             opacity: entity.opacity
@@ -84,7 +74,7 @@ struct WorkRecordView: View {
         Entity.bg(neutral),
         Entity.prog(progress, neutral),
       ]
-    } else if record.date > Date.now {
+    } else if record.at > Date.now {
       return [
         Entity.bg(neutral),
       ]
@@ -114,9 +104,23 @@ struct WorkRecordView: View {
   }
 }
 
+struct EmptyWorkRecordView: View {
+  var body: some View {
+    GeometryReader { geo in
+      CapsuleProgressBar(
+        progress: .constant(1.0),
+        lineWidth: WorkRecordView.lineWidth,
+        color: .gray,
+        cornerRadius: geo.size.height * 0.05,
+        opacity: 1.0
+      )
+    }
+  }
+}
+
 struct WorkRecordView_Previews: PreviewProvider {
     static var previews: some View {
-      WorkRecordView(record: RecentWorkRecord.preview)
+      WorkRecordView(record: WorkRecord.preview(DataController().container.viewContext))
         .frame(width: 60, height: 150)
         .environmentObject(UserSettings.preview)
     }

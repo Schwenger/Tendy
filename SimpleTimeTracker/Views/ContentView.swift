@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
   @EnvironmentObject var settings: UserSettings
   @EnvironmentObject var past: Past
-  @EnvironmentObject var cwd: CurrentWorkDay
   @State var tabSelection: Int = 0
   
   var body: some View {

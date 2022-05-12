@@ -10,46 +10,49 @@ import SwiftUI
 struct ContentView: View {
   @EnvironmentObject var past: Past
   @EnvironmentObject var settings: UserSettings
-  @EnvironmentObject var cwd: CurrentWorkDay
+  
+  var cwd: WorkRecord? {
+    past.cwd
+  }
   
   var body: some View {
     VStack {
       VStack {
-        Text("\((cwd.timeWorked ?? TimeInterval(0)).defaultFormatted) / \(settings.quota(Date.now).defaultFormatted)")
+        Text("\((cwd?.timeWorked ?? TimeInterval(0)).defaultFormatted) / \(settings.quota(Date.now).defaultFormatted)")
           .font(.title)
       }
       .padding(.top)
       
       HStack {
-        Button(action: { cwd.triggerWork() }) {
+        Button(action: { past.triggerWork() }) {
           VStack {
-            cwd.clockInOutButtonLabel
+            past.clockInOutButtonLabel
               .labelStyle(.iconOnly)
               .font(.largeTitle)
-            if let startTime = cwd.startTime, cwd.clockedIn {
+            if let startTime = past.startTime, past.clockedIn {
               Text(startTime.defaultFormatted)
             }
           }
         }
-        .disabled(!cwd.canTriggerWork)
+        .disabled(!past.canTriggerWork)
         .padding(.vertical, 20)
-        .background(cwd.canTriggerWork ? Color.blue : Color.gray)
+        .background(past.canTriggerWork ? Color.blue : Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .foregroundColor(.white)
         
-        Button(action: { cwd.triggerBreak() }) {
+        Button(action: { past.triggerBreak() }) {
           VStack {
-            cwd.breakInOutButtonLabel
+            past.breakInOutButtonLabel
               .labelStyle(.iconOnly)
               .font(.largeTitle)
-            if let startTime = cwd.breakStartTime, cwd.inBreak {
+            if let startTime = past.breakStartTime, past.inBreak {
               Text(startTime.defaultFormatted)
             }
           }
         }
-        .disabled(!cwd.canTriggerBreak)
+        .disabled(!past.canTriggerBreak)
         .padding(.vertical, 20)
-        .background(cwd.canTriggerBreak ? Color.green : Color.gray)
+        .background(past.canTriggerBreak ? Color.green : Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .foregroundColor(.white)
       }
@@ -58,7 +61,7 @@ struct ContentView: View {
       HStack {
         Text("Exp. Quit:")
         Spacer()
-        Text("~\(cwd.expectedQuittingTime.defaultFormatted)")
+        Text("~\(past.expectedQuittingTime.defaultFormatted)")
       }
       .padding(.horizontal)
     }
