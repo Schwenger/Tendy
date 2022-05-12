@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0303A327F4E87600D412F2 /* Past.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A227F4E87600D412F2 /* Past.swift */; };
+		AF0303A627F621BC00D412F2 /* WorkRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A427F621BC00D412F2 /* WorkRecord.xcdatamodeld */; };
+		AF0303A827F6228A00D412F2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A727F6228A00D412F2 /* DataController.swift */; };
+		AF0303AA27F62EE400D412F2 /* OldWorkRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A927F62EE400D412F2 /* OldWorkRecordView.swift */; };
+		AF53B90C2805CD9C007185AA /* WorkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B90B2805CD9C007185AA /* WorkRecord.swift */; };
+		AF53B90D2805CD9C007185AA /* WorkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B90B2805CD9C007185AA /* WorkRecord.swift */; };
+		AF53B91428075546007185AA /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B91328075546007185AA /* DateHelper.swift */; };
+		AF53B91528075546007185AA /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53B91328075546007185AA /* DateHelper.swift */; };
+		AF53B916280760CD007185AA /* Past.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A227F4E87600D412F2 /* Past.swift */; };
+		AF53B917280760F0007185AA /* WorkRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A427F621BC00D412F2 /* WorkRecord.xcdatamodeld */; };
+		AF53B91828076599007185AA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0303A727F6228A00D412F2 /* DataController.swift */; };
+		AF78594D2813311200835332 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78594C2813311200835332 /* DateExtension.swift */; };
+		AF78594E2813311200835332 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78594C2813311200835332 /* DateExtension.swift */; };
+		AF785950282C242200835332 /* WorkRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78594F282C242200835332 /* WorkRecordView.swift */; };
+		AF785951282C242200835332 /* WorkRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78594F282C242200835332 /* WorkRecordView.swift */; };
+		AF785953282C243C00835332 /* CapsuleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785952282C243C00835332 /* CapsuleProgressBar.swift */; };
+		AF785954282C243C00835332 /* CapsuleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785952282C243C00835332 /* CapsuleProgressBar.swift */; };
+		AF785956282C3E7700835332 /* PastRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785955282C3E7700835332 /* PastRecordDetailView.swift */; };
+		AF785957282C3E7700835332 /* PastRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785955282C3E7700835332 /* PastRecordDetailView.swift */; };
+		AF785959282C407900835332 /* SplitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785958282C407900835332 /* SplitLine.swift */; };
+		AF78595A282C407900835332 /* SplitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF785958282C407900835332 /* SplitLine.swift */; };
+		AF8DE1B427E4FDE000F5EBC7 /* PastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1B327E4FDE000F5EBC7 /* PastView.swift */; };
+		AF8DE1B727E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1B527E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld */; };
+		AF8DE1B927E4FF7900F5EBC7 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1B827E4FF7900F5EBC7 /* UserSetting.swift */; };
+		AF8DE1BA27E4FF7900F5EBC7 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1B827E4FF7900F5EBC7 /* UserSetting.swift */; };
+		AF8DE1BC27E61DE300F5EBC7 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1BB27E61DE300F5EBC7 /* CircularProgressBar.swift */; };
+		AF8DE1BE27E62FE100F5EBC7 /* StackedHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1BD27E62FE100F5EBC7 /* StackedHighlight.swift */; };
+		AF8DE1C027E7C9BA00F5EBC7 /* WatchComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1BF27E7C9BA00F5EBC7 /* WatchComm.swift */; };
+		AF8DE1C227E7CAAB00F5EBC7 /* PhoneComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1C127E7CAAB00F5EBC7 /* PhoneComm.swift */; };
+		AF8DE1C427E7CBA000F5EBC7 /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1C327E7CBA000F5EBC7 /* Comm.swift */; };
+		AF8DE1C527E7CBA000F5EBC7 /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DE1C327E7CBA000F5EBC7 /* Comm.swift */; };
 		AF91906A27D4C9B9002DED9C /* SimpleTimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91906927D4C9B9002DED9C /* SimpleTimeTrackerApp.swift */; };
 		AF91906C27D4C9B9002DED9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91906B27D4C9B9002DED9C /* ContentView.swift */; };
 		AF91906E27D4C9BA002DED9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91906D27D4C9BA002DED9C /* Assets.xcassets */; };
@@ -21,6 +52,12 @@
 		AF91908D27D4C9BB002DED9C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91908C27D4C9BB002DED9C /* ComplicationController.swift */; };
 		AF91908F27D4C9BB002DED9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91908E27D4C9BB002DED9C /* Assets.xcassets */; };
 		AF91909227D4C9BB002DED9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF91909127D4C9BB002DED9C /* Preview Assets.xcassets */; };
+		AF9190A327D53E3D002DED9C /* ClockInOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9190A227D53E3D002DED9C /* ClockInOutView.swift */; };
+		AF9190A727D7D3CA002DED9C /* CurrentWorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9190A627D7D3CA002DED9C /* CurrentWorkDay.swift */; };
+		AF9190AB27D7E5BE002DED9C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9190AA27D7E5BE002DED9C /* SettingsView.swift */; };
+		AF9190AC27D7E68E002DED9C /* CurrentWorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9190A627D7D3CA002DED9C /* CurrentWorkDay.swift */; };
+		AF9190AF27D7F38F002DED9C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9190AE27D7F38F002DED9C /* Common.swift */; };
+		AF9190B027D7F5B6002DED9C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9190AE27D7F38F002DED9C /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +103,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF0303A227F4E87600D412F2 /* Past.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Past.swift; sourceTree = "<group>"; };
+		AF0303A527F621BC00D412F2 /* WorkRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkRecord.xcdatamodel; sourceTree = "<group>"; };
+		AF0303A727F6228A00D412F2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		AF0303A927F62EE400D412F2 /* OldWorkRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldWorkRecordView.swift; sourceTree = "<group>"; };
+		AF53B90B2805CD9C007185AA /* WorkRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkRecord.swift; sourceTree = "<group>"; };
+		AF53B91328075546007185AA /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		AF78594C2813311200835332 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		AF78594F282C242200835332 /* WorkRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkRecordView.swift; sourceTree = "<group>"; };
+		AF785952282C243C00835332 /* CapsuleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleProgressBar.swift; sourceTree = "<group>"; };
+		AF785955282C3E7700835332 /* PastRecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastRecordDetailView.swift; sourceTree = "<group>"; };
+		AF785958282C407900835332 /* SplitLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitLine.swift; sourceTree = "<group>"; };
+		AF8DE1B327E4FDE000F5EBC7 /* PastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastView.swift; sourceTree = "<group>"; };
+		AF8DE1B627E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTimeTracker.xcdatamodel; sourceTree = "<group>"; };
+		AF8DE1B827E4FF7900F5EBC7 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		AF8DE1BB27E61DE300F5EBC7 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		AF8DE1BD27E62FE100F5EBC7 /* StackedHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedHighlight.swift; sourceTree = "<group>"; };
+		AF8DE1BF27E7C9BA00F5EBC7 /* WatchComm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchComm.swift; sourceTree = "<group>"; };
+		AF8DE1C127E7CAAB00F5EBC7 /* PhoneComm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneComm.swift; sourceTree = "<group>"; };
+		AF8DE1C327E7CBA000F5EBC7 /* Comm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comm.swift; sourceTree = "<group>"; };
 		AF91906627D4C9B9002DED9C /* SimpleTimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF91906927D4C9B9002DED9C /* SimpleTimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimeTrackerApp.swift; sourceTree = "<group>"; };
 		AF91906B27D4C9B9002DED9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +139,10 @@
 		AF91909127D4C9BB002DED9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF91909327D4C9BB002DED9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF91909427D4C9BB002DED9C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		AF9190A227D53E3D002DED9C /* ClockInOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInOutView.swift; sourceTree = "<group>"; };
+		AF9190A627D7D3CA002DED9C /* CurrentWorkDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWorkDay.swift; sourceTree = "<group>"; };
+		AF9190AA27D7E5BE002DED9C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AF9190AE27D7F38F002DED9C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +163,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF53B90E28074B4D007185AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF0303A927F62EE400D412F2 /* OldWorkRecordView.swift */,
+				AF9190A227D53E3D002DED9C /* ClockInOutView.swift */,
+				AF9190AA27D7E5BE002DED9C /* SettingsView.swift */,
+				AF8DE1B327E4FDE000F5EBC7 /* PastView.swift */,
+				AF91906927D4C9B9002DED9C /* SimpleTimeTrackerApp.swift */,
+				AF91906B27D4C9B9002DED9C /* ContentView.swift */,
+				AF78594F282C242200835332 /* WorkRecordView.swift */,
+				AF785955282C3E7700835332 /* PastRecordDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF53B90F28074B67007185AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AF8DE1BB27E61DE300F5EBC7 /* CircularProgressBar.swift */,
+				AF8DE1BD27E62FE100F5EBC7 /* StackedHighlight.swift */,
+				AF785952282C243C00835332 /* CapsuleProgressBar.swift */,
+				AF785958282C407900835332 /* SplitLine.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AF53B91028074B7A007185AA /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				AF8DE1C127E7CAAB00F5EBC7 /* PhoneComm.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		AF53B91228074B95007185AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF8DE1B227E4FD5E00F5EBC7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AF0303A727F6228A00D412F2 /* DataController.swift */,
+				AF0303A227F4E87600D412F2 /* Past.swift */,
+				AF9190AE27D7F38F002DED9C /* Common.swift */,
+				AF9190A627D7D3CA002DED9C /* CurrentWorkDay.swift */,
+				AF8DE1B827E4FF7900F5EBC7 /* UserSetting.swift */,
+				AF8DE1C327E7CBA000F5EBC7 /* Comm.swift */,
+				AF53B90B2805CD9C007185AA /* WorkRecord.swift */,
+				AF53B91328075546007185AA /* DateHelper.swift */,
+				AF78594C2813311200835332 /* DateExtension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		AF91905D27D4C9B9002DED9C = {
 			isa = PBXGroup;
 			children = (
+				AF0303A427F621BC00D412F2 /* WorkRecord.xcdatamodeld */,
+				AF8DE1B227E4FD5E00F5EBC7 /* Common */,
 				AF91906827D4C9B9002DED9C /* SimpleTimeTracker */,
 				AF91907827D4C9BA002DED9C /* SimpleTimeTracker WatchKit App */,
 				AF91908327D4C9BB002DED9C /* SimpleTimeTracker WatchKit Extension */,
@@ -126,10 +245,13 @@
 		AF91906827D4C9B9002DED9C /* SimpleTimeTracker */ = {
 			isa = PBXGroup;
 			children = (
-				AF91906927D4C9B9002DED9C /* SimpleTimeTrackerApp.swift */,
-				AF91906B27D4C9B9002DED9C /* ContentView.swift */,
+				AF53B91228074B95007185AA /* Model */,
+				AF53B91028074B7A007185AA /* Logic */,
+				AF53B90F28074B67007185AA /* Components */,
+				AF53B90E28074B4D007185AA /* Views */,
 				AF91906D27D4C9BA002DED9C /* Assets.xcassets */,
 				AF91906F27D4C9BA002DED9C /* Preview Content */,
+				AF8DE1B527E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld */,
 			);
 			path = SimpleTimeTracker;
 			sourceTree = "<group>";
@@ -162,6 +284,7 @@
 				AF91909327D4C9BB002DED9C /* Info.plist */,
 				AF91909427D4C9BB002DED9C /* PushNotificationPayload.apns */,
 				AF91909027D4C9BB002DED9C /* Preview Content */,
+				AF8DE1BF27E7C9BA00F5EBC7 /* WatchComm.swift */,
 			);
 			path = "SimpleTimeTracker WatchKit Extension";
 			sourceTree = "<group>";
@@ -305,8 +428,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9190AF27D7F38F002DED9C /* Common.swift in Sources */,
+				AF78594D2813311200835332 /* DateExtension.swift in Sources */,
+				AF0303A327F4E87600D412F2 /* Past.swift in Sources */,
+				AF785956282C3E7700835332 /* PastRecordDetailView.swift in Sources */,
+				AF8DE1C227E7CAAB00F5EBC7 /* PhoneComm.swift in Sources */,
+				AF9190AB27D7E5BE002DED9C /* SettingsView.swift in Sources */,
+				AF9190A327D53E3D002DED9C /* ClockInOutView.swift in Sources */,
+				AF53B90C2805CD9C007185AA /* WorkRecord.swift in Sources */,
+				AF8DE1B727E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld in Sources */,
+				AF9190A727D7D3CA002DED9C /* CurrentWorkDay.swift in Sources */,
+				AF8DE1B927E4FF7900F5EBC7 /* UserSetting.swift in Sources */,
+				AF8DE1BE27E62FE100F5EBC7 /* StackedHighlight.swift in Sources */,
+				AF53B91428075546007185AA /* DateHelper.swift in Sources */,
 				AF91906C27D4C9B9002DED9C /* ContentView.swift in Sources */,
+				AF8DE1B427E4FDE000F5EBC7 /* PastView.swift in Sources */,
 				AF91906A27D4C9B9002DED9C /* SimpleTimeTrackerApp.swift in Sources */,
+				AF0303A627F621BC00D412F2 /* WorkRecord.xcdatamodeld in Sources */,
+				AF0303AA27F62EE400D412F2 /* OldWorkRecordView.swift in Sources */,
+				AF0303A827F6228A00D412F2 /* DataController.swift in Sources */,
+				AF785953282C243C00835332 /* CapsuleProgressBar.swift in Sources */,
+				AF785950282C242200835332 /* WorkRecordView.swift in Sources */,
+				AF8DE1C427E7CBA000F5EBC7 /* Comm.swift in Sources */,
+				AF785959282C407900835332 /* SplitLine.swift in Sources */,
+				AF8DE1BC27E61DE300F5EBC7 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +459,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF785954282C243C00835332 /* CapsuleProgressBar.swift in Sources */,
+				AF8DE1BA27E4FF7900F5EBC7 /* UserSetting.swift in Sources */,
+				AF785957282C3E7700835332 /* PastRecordDetailView.swift in Sources */,
+				AF8DE1C027E7C9BA00F5EBC7 /* WatchComm.swift in Sources */,
+				AF53B90D2805CD9C007185AA /* WorkRecord.swift in Sources */,
+				AF785951282C242200835332 /* WorkRecordView.swift in Sources */,
+				AF78595A282C407900835332 /* SplitLine.swift in Sources */,
+				AF9190B027D7F5B6002DED9C /* Common.swift in Sources */,
 				AF91908927D4C9BB002DED9C /* NotificationController.swift in Sources */,
+				AF53B917280760F0007185AA /* WorkRecord.xcdatamodeld in Sources */,
+				AF53B916280760CD007185AA /* Past.swift in Sources */,
 				AF91908727D4C9BB002DED9C /* ContentView.swift in Sources */,
 				AF91908D27D4C9BB002DED9C /* ComplicationController.swift in Sources */,
+				AF78594E2813311200835332 /* DateExtension.swift in Sources */,
+				AF9190AC27D7E68E002DED9C /* CurrentWorkDay.swift in Sources */,
+				AF53B91828076599007185AA /* DataController.swift in Sources */,
+				AF53B91528075546007185AA /* DateHelper.swift in Sources */,
 				AF91908527D4C9BB002DED9C /* SimpleTimeTrackerApp.swift in Sources */,
+				AF8DE1C527E7CBA000F5EBC7 /* Comm.swift in Sources */,
 				AF91908B27D4C9BB002DED9C /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +554,10 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -446,6 +610,10 @@
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -594,6 +762,10 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -625,6 +797,10 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -670,6 +846,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF0303A427F621BC00D412F2 /* WorkRecord.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF0303A527F621BC00D412F2 /* WorkRecord.xcdatamodel */,
+			);
+			currentVersion = AF0303A527F621BC00D412F2 /* WorkRecord.xcdatamodel */;
+			path = WorkRecord.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		AF8DE1B527E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF8DE1B627E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodel */,
+			);
+			currentVersion = AF8DE1B627E4FE3C00F5EBC7 /* SimpleTimeTracker.xcdatamodel */;
+			path = SimpleTimeTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AF91905E27D4C9B9002DED9C /* Project object */;
 }
